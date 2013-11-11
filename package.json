@@ -1,0 +1,23 @@
+{
+  "name": "callsign",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~3.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/qbit/callsign.git"
+  },
+  "author": "Aaron Bieber <deftly@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qbit/callsign/issues"
+  }
+}
