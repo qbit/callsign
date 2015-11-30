@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // var http = require( 'http' ),
 // url = require('url'),
 // cache = {};
@@ -6,17 +8,18 @@
 // 
 // }).listen( 3014 );
 var express = require("express"),
+app = express(),
 http = require('http'),
-server = express.createServer(),
+server = http.Server(app),
 ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
 port = process.env.OPENSHIFT_NODEJS_PORT || 3014,
 cache = {};
-server.enable("jsonp callback");
+app.set("jsonp callback doit");
 setTimeout( function() {
 	'use strict';
 	cache = {};
 }, 86400000 * 4);
-server.get("/:id", function(req, res) {
+app.get("/:id", function(req, res) {
 	'use strict';
 	var call = req.params.id,
 	curl = 'http://data.fcc.gov/api/license-view/basicSearch/getLicenses?searchValue=%S&format=json';
