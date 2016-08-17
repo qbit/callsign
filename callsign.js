@@ -19,6 +19,9 @@ setTimeout( function() {
 	'use strict';
 	cache = {};
 }, 86400000 * 4);
+app.get("/", function(req, res) {
+  res.send("OK");
+});
 app.get("/:id", function(req, res) {
 	'use strict';
 	var call = req.params.id,
